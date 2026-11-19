@@ -6,7 +6,7 @@ from typing import List, Literal, Optional
 # Crear la API
 app = FastAPI(
     title="Control de Tareas",
-    description="Prueba sencilla para Becario",
+    description="Prueba Tecnica",
     version="1.0.0"
 )
 
@@ -14,7 +14,7 @@ app = FastAPI(
 # Datos: id, titulo, prioridad y estado
 class Tarea(BaseModel):
     id: int = Field(description="ID único de la tarea", example=1)
-    titulo: str = Field(min_length=1, description="La tarea necesita un titulo unico", example="Estudiar")
+    titulo: str = Field(min_length=1, description="La tarea necesita un titulo", example="Estudiar")
     prioridad: Literal["alta", "media", "baja"] = Field(description="Prioridad: alta, media o baja", example="alta")
     estado: Literal["pendiente", "completada"] = Field(description="Estado: pendiente o completada", example="pendiente")
 
