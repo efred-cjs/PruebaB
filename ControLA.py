@@ -93,8 +93,11 @@ def registrar_tarea(datos: DatosTarea):
     summary="Consultar todas las tareas",
     tags=["Tareas"]
 )
-def consultar_tareas():
-    return lista_tareas
+
+def consultar_prioridad(prioridad:Optional[Literal["alta","media","baja"]]=None):
+    if prioridad is not None:
+        return[tarea for tarea in lista_tareas if tarea.prioridad == prioridad]
+    return lista_tareas 
 
 
 # Buscar la tarea 
